@@ -1,0 +1,6 @@
+rootProject.name = 'QuickMd5Example'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+
+include ':reactnativequickmd5'
+project(':reactnativequickmd5').projectDir = new File(rootProject.projectDir, '../../android')
