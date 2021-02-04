@@ -1,6 +1,6 @@
 # react-native-quick-md5
 
-A native implementation of MD5
+A native implementation of MD5 for performance
 
 ## Installation
 
@@ -21,6 +21,13 @@ const result = await QuickMd5.calc(
   'base64' // output encoding (hex|base64)
 );
 ```
+
+### calc(message, inputEncoding, outputEncoding) -> string
+
+- `message`: `string` - A data to calc an MD5 digest
+- `inputEncoding`: `'utf8'` | `'base64'` - The encoding of the input data
+- `outputEncoding`: `'hex'` | `'base64'` - The encoding of the output data
+- **return**: string - The MD5 digest
 
 ## Contributing
 
