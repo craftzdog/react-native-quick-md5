@@ -2,8 +2,7 @@
 
 @interface RCT_EXTERN_MODULE(QuickMd5, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN__BLOCKING_SYNCHRONOUS_METHOD(calc:(NSString*)string withInputEncoding:(NSString*)inputEncoding
+       outputEncoding:(NSString*)outputEncoding);
 
 @end

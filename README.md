@@ -11,11 +11,15 @@ npm install react-native-quick-md5
 ## Usage
 
 ```js
-import QuickMd5 from "react-native-quick-md5";
+import QuickMd5 from 'react-native-quick-md5';
 
 // ...
 
-const result = await QuickMd5.multiply(3, 7);
+const result = await QuickMd5.calc(
+  'foobar', // message
+  'utf8', // input encoding (utf8|base64)
+  'base64' // output encoding (hex|base64)
+);
 ```
 
 ## Contributing
