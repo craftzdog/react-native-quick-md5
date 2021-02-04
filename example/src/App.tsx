@@ -7,7 +7,7 @@ export default function App() {
   const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    const res = QuickMd5.calc('hoge', 'utf8', 'base64');
+    const res = QuickMd5.calc('6nA+eqHv2gBk6qUH2eirfg==', 'base64', 'hex');
     setResult(res);
   }, []);
 
