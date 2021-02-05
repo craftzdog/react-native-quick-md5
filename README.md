@@ -15,7 +15,7 @@ import QuickMd5 from 'react-native-quick-md5';
 
 // ...
 
-const result = await QuickMd5.calc(
+const result = QuickMd5.calc(
   'foobar', // message
   'utf8', // input encoding (utf8|base64)
   'base64' // output encoding (hex|base64)
