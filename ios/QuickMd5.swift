@@ -6,6 +6,10 @@ import typealias CommonCrypto.CC_LONG
 @objc(QuickMd5)
 class QuickMd5: NSObject {
 
+    @objc static func requiresMainQueueSetup() -> Bool {
+        return false
+    }
+
     @objc(calc:withInputEncoding:outputEncoding:)
     func calc(string: String, inputEncoding: String, outputEncoding: String) -> String {
         let length = Int(CC_MD5_DIGEST_LENGTH)
