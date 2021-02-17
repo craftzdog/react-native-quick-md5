@@ -33,7 +33,7 @@ documentation and/or software.
 #ifndef BZF_MD5_H
 #define BZF_MD5_H
  
-#include <cstring>
+#include <sstream>
 #include <iostream>
  
  

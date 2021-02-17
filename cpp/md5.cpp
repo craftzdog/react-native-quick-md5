@@ -32,11 +32,7 @@ documentation and/or software.
  
 /* interface header */
 #include "md5.h"
- 
-/* system implementation headers */
-#include <cstdio>
- 
- 
+
 // Constants for MD5Transform routine.
 #define S11 7
 #define S12 12

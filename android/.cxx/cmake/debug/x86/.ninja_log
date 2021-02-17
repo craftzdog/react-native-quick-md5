@@ -1,6 +1,0 @@
-# ninja log v5
-1	527	0	CMakeFiles/cpp.dir/cpp-adapter.cpp.o	4e385d659854c976
-1	632	0	CMakeFiles/cpp.dir/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp.o	af7c99ec58fe9722
-0	795	0	CMakeFiles/cpp.dir/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/quick-md5.cpp.o	3eefe556363b3465
-0	838	0	CMakeFiles/cpp.dir/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/node_modules/react-native/ReactCommon/jsi/jsi/jsi.cpp.o	41d458e7a1d1d2b1
-838	950	0	../../../../build/intermediates/cmake/debug/obj/x86/libcpp.so	55c6dd21dffa6720

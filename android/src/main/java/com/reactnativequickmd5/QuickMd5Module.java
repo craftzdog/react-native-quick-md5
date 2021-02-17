@@ -8,7 +8,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
 class QuickMd5Module extends ReactContextBaseJavaModule {
   static {
-    System.loadLibrary("cpp");
+    System.loadLibrary("quickmd5");
   }
 
   private static native void initialize(long jsiPtr, String docDir);
