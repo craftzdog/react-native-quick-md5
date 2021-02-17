@@ -43,6 +43,7 @@ export default function App() {
     for (let iter = 0; iter < 100; iter++) {
       const spark = new SparkMD5.ArrayBuffer();
       spark.append(dataToProcess);
+      spark.end();
     }
     const finishedTime = performance.now();
     console.log('done! took', finishedTime - startTime, 'milliseconds');
