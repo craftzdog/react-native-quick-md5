@@ -1,14 +1,15 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import QuickMd5 from 'react-native-quick-md5';
+import { stringMd5 } from 'react-native-quick-md5';
 
 export default function App() {
   const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    const res = QuickMd5.calc('6nA+eqHv2gBk6qUH2eirfg==', 'base64', 'hex');
-    setResult(res);
+    const md5 = stringMd5('hoge');
+    setResult(md5);
+    console.log(md5);
   }, []);
 
   return (

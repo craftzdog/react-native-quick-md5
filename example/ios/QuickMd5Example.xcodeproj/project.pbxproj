@@ -137,6 +137,7 @@
 				47F7ED3B7971BE374F7B8635 /* Pods-QuickMd5Example.debug.xcconfig */,
 				E00ACF0FDA8BF921659E2F9A /* Pods-QuickMd5Example.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -542,7 +543,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = QuickMd5Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

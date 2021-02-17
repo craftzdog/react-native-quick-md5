@@ -1,6 +1,6 @@
 # react-native-quick-md5
 
-A native implementation of MD5 for performance
+A fast C++ implementation with JSI binding of MD5 for React Native.
 
 ## Installation
 
@@ -11,23 +11,21 @@ npm install react-native-quick-md5
 ## Usage
 
 ```js
-import QuickMd5 from 'react-native-quick-md5';
+import { stringMd5 } from 'react-native-quick-md5';
 
-// ...
-
-const result = QuickMd5.calc(
-  'foobar', // message
-  'utf8', // input encoding (utf8|base64)
-  'base64' // output encoding (hex|base64)
-);
+const md5 = stringMd5('hoge');
+// => "ea703e7aa1efda0064eaa507d9e8ab7e"
 ```
 
-### calc(message, inputEncoding, outputEncoding) -> string
+### stringMd5(data: string): string
 
-- `message`: `string` - A data to calc an MD5 digest
-- `inputEncoding`: `'utf8'` | `'base64'` - The encoding of the input data
-- `outputEncoding`: `'hex'` | `'base64'` - The encoding of the output data
-- **return**: string - The MD5 digest
+Calculate MD5 for given UTF-8 string data.
+Returns hex encoded hash.
+
+### binaryMd5(data: string | ArrayBuffer): string
+
+Calculate MD5 for given binary string or ArrayBuffer data.
+Returns hex encoded hash.
 
 ## Contributing
 
@@ -36,3 +34,7 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+
+## See also
+
+- [react-native-quick-base64: A fast C++ Base64 module for React Native](https://github.com/craftzdog/react-native-quick-base64)

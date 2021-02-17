@@ -1,16 +1,20 @@
-import { NativeModules } from 'react-native';
+const g = global as any;
 
-type MD5InputEncoding = 'utf8' | 'base64';
-type MD5OutputEncoding = 'hex' | 'base64';
+function stringToArrayBuffer(str: string) {
+  const buf = new ArrayBuffer(str.length);
+  const bufView = new Uint8Array(buf);
+  for (let i = 0, strLen = str.length; i < strLen; i++) {
+    bufView[i] = str.charCodeAt(i);
+  }
+  return buf;
+}
 
-type QuickMd5Type = {
-  calc(
-    string: string,
-    inputEncoding: MD5InputEncoding,
-    outputEncoding: MD5OutputEncoding
-  ): string;
-};
+export function stringMd5(data: string): string {
+  return g.md5FromArrayBuffer(data);
+}
 
-const { QuickMd5 } = NativeModules;
+export function binaryMd5(data: string | ArrayBuffer): string {
+  data = typeof data === 'string' ? stringToArrayBuffer(data) : data;
 
-export default QuickMd5 as QuickMd5Type;
+  return g.md5FromArrayBuffer(data);
+}
