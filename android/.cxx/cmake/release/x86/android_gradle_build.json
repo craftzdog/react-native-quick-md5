@@ -1,0 +1,59 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/nora/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"cpp-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "cpp",
+			"buildCommand" : "/Users/nora/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86 --target cpp",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android16 --gcc-toolchain=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dcpp_EXPORTS -I../../../../../cpp -I../../../../../node_modules/react-native/React -I../../../../../node_modules/react-native/React/Base -I../../../../../node_modules/react-native/ReactCommon/jsi  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -frtti -fexceptions -Wall -fstack-protector-all -O2 -DNDEBUG  -fPIC   -std=gnu++11  -c ",
+					"src" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/node_modules/react-native/ReactCommon/jsi/jsi/jsi.cpp",
+					"workingDirectory" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android16 --gcc-toolchain=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dcpp_EXPORTS -I../../../../../cpp -I../../../../../node_modules/react-native/React -I../../../../../node_modules/react-native/React/Base -I../../../../../node_modules/react-native/ReactCommon/jsi  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -frtti -fexceptions -Wall -fstack-protector-all -O2 -DNDEBUG  -fPIC   -std=gnu++11  -c ",
+					"src" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/quick-md5.cpp",
+					"workingDirectory" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android16 --gcc-toolchain=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dcpp_EXPORTS -I../../../../../cpp -I../../../../../node_modules/react-native/React -I../../../../../node_modules/react-native/React/Base -I../../../../../node_modules/react-native/ReactCommon/jsi  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -frtti -fexceptions -Wall -fstack-protector-all -O2 -DNDEBUG  -fPIC   -std=gnu++11  -c ",
+					"src" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp",
+					"workingDirectory" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android16 --gcc-toolchain=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dcpp_EXPORTS -I../../../../../cpp -I../../../../../node_modules/react-native/React -I../../../../../node_modules/react-native/React/Base -I../../../../../node_modules/react-native/ReactCommon/jsi  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -frtti -fexceptions -Wall -fstack-protector-all -O2 -DNDEBUG  -fPIC   -std=gnu++11  -c ",
+					"src" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/cpp-adapter.cpp",
+					"workingDirectory" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86"
+				}
+			],
+			"output" : "/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/build/intermediates/cmake/release/obj/x86/libcpp.so",
+			"toolchain" : "15788051918077920594"
+		}
+	},
+	"toolchains" : 
+	{
+		"15788051918077920594" : 
+		{
+			"cCompilerExecutable" : "/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/nora/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

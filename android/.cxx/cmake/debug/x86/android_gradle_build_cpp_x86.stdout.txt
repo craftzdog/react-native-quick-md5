@@ -1,0 +1,34 @@
+[1/5] Building CXX object CMakeFiles/cpp.dir/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/node_modules/react-native/ReactCommon/jsi/jsi/jsi.cpp.o
+[2/5] Building CXX object CMakeFiles/cpp.dir/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/quick-md5.cpp.o
+[3/5] Building CXX object CMakeFiles/cpp.dir/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp.o
+[4/5] Building CXX object CMakeFiles/cpp.dir/cpp-adapter.cpp.o
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:62:11: warning: '&' within '|' [-Wbitwise-op-parentheses]
+  return x&y | ~x&z;
+         ~^~ ~
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:62:11: note: place parentheses around the '&' expression to silence this warning
+  return x&y | ~x&z;
+          ^
+         (  )
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:62:18: warning: '&' within '|' [-Wbitwise-op-parentheses]
+  return x&y | ~x&z;
+             ~ ~~^~
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:62:18: note: place parentheses around the '&' expression to silence this warning
+  return x&y | ~x&z;
+                 ^
+               (   )
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:66:11: warning: '&' within '|' [-Wbitwise-op-parentheses]
+  return x&z | y&~z;
+         ~^~ ~
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:66:11: note: place parentheses around the '&' expression to silence this warning
+  return x&z | y&~z;
+          ^
+         (  )
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:66:17: warning: '&' within '|' [-Wbitwise-op-parentheses]
+  return x&z | y&~z;
+             ~ ~^~~
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/cpp/md5.cpp:66:17: note: place parentheses around the '&' expression to silence this warning
+  return x&z | y&~z;
+                ^
+               (   )
+4 warnings generated.
+[5/5] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/x86/libcpp.so

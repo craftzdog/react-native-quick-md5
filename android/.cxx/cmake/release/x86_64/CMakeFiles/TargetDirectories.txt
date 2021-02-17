@@ -1,0 +1,3 @@
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
+/Users/nora/.ghq/github.com/craftzdog/react-native-quick-md5/android/.cxx/cmake/release/x86_64/CMakeFiles/cpp.dir
