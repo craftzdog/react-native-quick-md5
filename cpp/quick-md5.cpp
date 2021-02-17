@@ -6,7 +6,7 @@
 using namespace facebook;
 
 // Returns false if the passed value is not a string or an ArrayBuffer.
-bool valueToString(jsi::Runtime& runtime, const jsi::Value& value, std::string* str) {
+bool md5_valueToString(jsi::Runtime& runtime, const jsi::Value& value, std::string* str) {
   if (value.isString()) {
     *str = value.asString(runtime).utf8(runtime);
     return true;
@@ -34,7 +34,7 @@ void installMd5(jsi::Runtime& jsiRuntime) {
       1,  // string or ArrayBuffer
       [](jsi::Runtime& runtime, const jsi::Value& thisValue, const jsi::Value* arguments, size_t count) -> jsi::Value {
         std::string str;
-        if(!valueToString(runtime, arguments[0], &str)) {
+        if(!md5_valueToString(runtime, arguments[0], &str)) {
           return jsi::Value(-1);
         }
         std::string strMd5 =  md5(str);
