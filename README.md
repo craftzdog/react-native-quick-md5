@@ -1,6 +1,6 @@
 # react-native-quick-md5
 
-Brazingly fast C++ implementation with JSI binding of MD5 for React Native.
+Blazingly fast C++ implementation with JSI binding of MD5 for React Native.
 
 Confirmed that it's 10x faster than using [spark-md5](https://github.com/satazor/js-spark-md5) on an iPhone 11 Pro and 8x faster on an Essential Phone.
 You can check out the benchmark tests under [example](./example).
