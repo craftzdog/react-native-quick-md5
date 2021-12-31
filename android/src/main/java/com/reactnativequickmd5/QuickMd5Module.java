@@ -1,5 +1,7 @@
 package com.reactnativequickmd5;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -11,7 +13,7 @@ class QuickMd5Module extends ReactContextBaseJavaModule {
     System.loadLibrary("quickmd5");
   }
 
-  private static native void initialize(long jsiPtr, String docDir);
+  private static native void initialize(long jsiPtr);
   private static native void destruct();
 
   public QuickMd5Module(ReactApplicationContext reactContext) {
@@ -28,9 +30,13 @@ class QuickMd5Module extends ReactContextBaseJavaModule {
   public void initialize() {
     super.initialize();
 
-    QuickMd5Module.initialize(
-      this.getReactApplicationContext().getJavaScriptContextHolder().get(),
-      this.getReactApplicationContext().getFilesDir().getAbsolutePath());
+    long contextPointer = this.getReactApplicationContext().getJavaScriptContextHolder().get();
+
+    if (contextPointer == 0) {
+      Log.e("QuickMd5", "Initialization failed due to void pointer");
+    } else {
+      QuickMd5Module.initialize(contextPointer);
+    }
   }
 
   @Override
