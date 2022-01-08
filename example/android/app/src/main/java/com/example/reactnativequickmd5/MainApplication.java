@@ -10,7 +10,9 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.reactnativequickmd5.QuickMd5JSIModulePackage;
 import com.reactnativequickmd5.QuickMd5Package;
+import com.facebook.react.bridge.JSIModulePackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,13 +29,17 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for QuickMd5Example:
           // packages.add(new MyReactNativePackage());
-          packages.add(new QuickMd5Package());
           return packages;
         }
 
         @Override
         protected String getJSMainModuleName() {
           return "index";
+        }
+
+        @Override
+        protected JSIModulePackage getJSIModulePackage() {
+          return new QuickMd5JSIModulePackage();
         }
       };
 

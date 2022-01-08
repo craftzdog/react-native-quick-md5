@@ -11,6 +11,10 @@ You can check out the benchmark tests under [example](./example).
 npm install react-native-quick-md5
 ```
 
+### Android
+
+To correctly initialize QuickMd5 on Android, please follow the [Installation guide](./INSTALL.md).
+
 ## Usage
 
 ```js

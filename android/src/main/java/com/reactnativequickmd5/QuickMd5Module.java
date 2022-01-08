@@ -6,13 +6,12 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
 
-class QuickMd5Module extends ReactContextBaseJavaModule {
+public class QuickMd5Module extends ReactContextBaseJavaModule {
   static {
     System.loadLibrary("quickmd5");
   }
 
   private static native void initialize(long jsiPtr, String docDir);
-  private static native void destruct();
 
   public QuickMd5Module(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -24,17 +23,9 @@ class QuickMd5Module extends ReactContextBaseJavaModule {
     return "QuickMd5";
   }
 
-  @Override
-  public void initialize() {
-    super.initialize();
-
+  public static void install(ReactApplicationContext context) {
     QuickMd5Module.initialize(
-      this.getReactApplicationContext().getJavaScriptContextHolder().get(),
-      this.getReactApplicationContext().getFilesDir().getAbsolutePath());
-  }
-
-  @Override
-  public void onCatalystInstanceDestroy() {
-    QuickMd5Module.destruct();
+      context.getJavaScriptContextHolder().get(),
+      context.getFilesDir().getAbsolutePath());
   }
 }
