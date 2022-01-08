@@ -1,55 +1,53 @@
 /* global performance */
-import * as React from 'react';
-import { useState } from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import * as React from 'react'
+import { useState } from 'react'
+import { StyleSheet, View, Text, Pressable } from 'react-native'
 
-import { Buffer } from 'buffer';
-import { binaryMd5 } from 'react-native-quick-md5';
+import { Buffer } from 'buffer'
+import { binaryMd5 } from 'react-native-quick-md5'
 // @ts-ignore
-import SparkMD5 from 'spark-md5';
-import { data } from './image.json';
+import SparkMD5 from 'spark-md5'
+import { data } from './image.json'
 
-const dataToProcess = Buffer.from(data, 'base64').buffer;
+const dataToProcess = Buffer.from(data, 'base64').buffer
 
-const sleep = (t: number) => new Promise((resolve) => setTimeout(resolve, t));
+const sleep = (t: number) => new Promise(resolve => setTimeout(resolve, t))
 
 export default function App() {
-  const [processingJSMd5, setProcessingJSMd5] = useState<boolean>(false);
-  const [jsMd5Result, setJsMd5Result] = useState<number>(0);
-  const [processingNativeMd5, setProcessingNativeMd5] = useState<boolean>(
-    false
-  );
-  const [nativeMd5Result, setNativeMd5Result] = useState<number>(0);
+  const [processingJSMd5, setProcessingJSMd5] = useState<boolean>(false)
+  const [jsMd5Result, setJsMd5Result] = useState<number>(0)
+  const [processingNativeMd5, setProcessingNativeMd5] = useState<boolean>(false)
+  const [nativeMd5Result, setNativeMd5Result] = useState<number>(0)
 
   const handleNativeMd5Press = async () => {
-    setProcessingNativeMd5(true);
-    await sleep(1);
-    const startTime = performance.now();
+    setProcessingNativeMd5(true)
+    await sleep(1)
+    const startTime = performance.now()
 
     for (let iter = 0; iter < 100; iter++) {
-      binaryMd5(dataToProcess);
+      binaryMd5(dataToProcess)
     }
-    const finishedTime = performance.now();
-    console.log('done! took', finishedTime - startTime, 'milliseconds');
-    setNativeMd5Result(finishedTime - startTime);
-    setProcessingNativeMd5(false);
-  };
+    const finishedTime = performance.now()
+    console.log('done! took', finishedTime - startTime, 'milliseconds')
+    setNativeMd5Result(finishedTime - startTime)
+    setProcessingNativeMd5(false)
+  }
 
   const handleJSMd5Press = async () => {
-    setProcessingJSMd5(true);
-    await sleep(1);
-    const startTime = performance.now();
+    setProcessingJSMd5(true)
+    await sleep(1)
+    const startTime = performance.now()
 
     for (let iter = 0; iter < 100; iter++) {
-      const spark = new SparkMD5.ArrayBuffer();
-      spark.append(dataToProcess);
-      spark.end();
+      const spark = new SparkMD5.ArrayBuffer()
+      spark.append(dataToProcess)
+      spark.end()
     }
-    const finishedTime = performance.now();
-    console.log('done! took', finishedTime - startTime, 'milliseconds');
-    setJsMd5Result(finishedTime - startTime);
-    setProcessingJSMd5(false);
-  };
+    const finishedTime = performance.now()
+    console.log('done! took', finishedTime - startTime, 'milliseconds')
+    setJsMd5Result(finishedTime - startTime)
+    setProcessingJSMd5(false)
+  }
 
   return (
     <View style={styles.container}>
@@ -73,28 +71,28 @@ export default function App() {
         </Text>
       </Pressable>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   box: {
     width: 60,
     height: 60,
-    marginVertical: 20,
+    marginVertical: 20
   },
   heading: {
     fontSize: 20,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 10
   },
   result: {
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 10
   },
-  button: { backgroundColor: 'skyblue', padding: 12 },
-});
+  button: { backgroundColor: 'skyblue', padding: 12 }
+})
