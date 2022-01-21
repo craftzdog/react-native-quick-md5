@@ -4,13 +4,10 @@ import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
-
+import com.facebook.react.bridge.ReactMethod;
 
 public class QuickMd5Module extends ReactContextBaseJavaModule {
-  static {
-    System.loadLibrary("quickmd5");
-  }
-
+  public static final String NAME = "QuickMd5";
   private static native void initialize(long jsiPtr, String docDir);
 
   public QuickMd5Module(ReactApplicationContext reactContext) {
@@ -20,12 +17,22 @@ public class QuickMd5Module extends ReactContextBaseJavaModule {
   @NonNull
   @Override
   public String getName() {
-    return "QuickMd5";
+    return NAME;
   }
 
-  public static void install(ReactApplicationContext context) {
-    QuickMd5Module.initialize(
-      context.getJavaScriptContextHolder().get(),
-      context.getFilesDir().getAbsolutePath());
+  @ReactMethod(isBlockingSynchronousMethod = true)
+  public boolean install() {
+    try {
+      System.loadLibrary("quickmd5");
+
+      ReactApplicationContext context = getReactApplicationContext();
+      initialize(
+        context.getJavaScriptContextHolder().get(),
+        context.getFilesDir().getAbsolutePath()
+      );
+      return true;
+    } catch (Exception exception) {
+      return false;
+    }
   }
 }

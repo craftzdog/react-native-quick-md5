@@ -7,7 +7,6 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class QuickMd5Package implements ReactPackage {
   @NonNull
   @Override
   public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
-    return Arrays.<NativeModule>asList(new QuickMd5Module(reactContext));
+    return Collections.singletonList(new QuickMd5Module(reactContext));
   }
 
   @NonNull

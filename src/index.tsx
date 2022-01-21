@@ -1,4 +1,11 @@
+import { NativeModules } from 'react-native'
 const g = global as any
+
+const Md5Module = NativeModules.QuickMd5
+
+if (typeof Md5Module.install === 'function') {
+  Md5Module.install()
+}
 
 function stringToArrayBuffer(str: string) {
   const buf = new ArrayBuffer(str.length)
