@@ -1,4 +1,6 @@
 import { NativeModules } from 'react-native'
+import SparkMD5 from 'spark-md5'
+
 const g = global as any
 
 const Md5Module = NativeModules.QuickMd5
@@ -17,11 +19,23 @@ function stringToArrayBuffer(str: string) {
 }
 
 export function stringMd5(data: string): string {
-  return g.md5FromArrayBuffer(data)
+  if (typeof g.md5FromArrayBuffer !== 'undefined') {
+    return g.md5FromArrayBuffer(data)
+  } else {
+    const spark = new SparkMD5()
+    spark.append(data)
+    return spark.end()
+  }
 }
 
 export function binaryMd5(data: string | ArrayBuffer): string {
   data = typeof data === 'string' ? stringToArrayBuffer(data) : data
 
-  return g.md5FromArrayBuffer(data)
+  if (typeof g.md5FromArrayBuffer !== 'undefined') {
+    return g.md5FromArrayBuffer(data)
+  } else {
+    const spark = new SparkMD5.ArrayBuffer()
+    spark.append(data)
+    return spark.end()
+  }
 }
