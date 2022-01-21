@@ -25,6 +25,3 @@ export function binaryMd5(data: string | ArrayBuffer): string {
 
   return g.md5FromArrayBuffer(data)
 }
-
-const isHermes = () => !!g.HermesInternal
-console.log('Hermes enabled:', isHermes())
