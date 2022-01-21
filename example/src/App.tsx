@@ -10,6 +10,8 @@ import SparkMD5 from 'spark-md5'
 import { data } from './image.json'
 
 const dataToProcess = Buffer.from(data, 'base64').buffer
+// @ts-ignore
+const isHermes = () => !!global.HermesInternal
 
 const sleep = (t: number) => new Promise(resolve => setTimeout(resolve, t))
 
@@ -70,6 +72,9 @@ export default function App() {
           {processingJSMd5 ? `Processing..` : 'Perform a benchmark test'}
         </Text>
       </Pressable>
+      <View style={styles.section}>
+        <Text>Hermes enabled? {JSON.stringify(isHermes())}</Text>
+      </View>
     </View>
   )
 }
@@ -94,5 +99,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10
   },
-  button: { backgroundColor: 'skyblue', padding: 12 }
+  button: { backgroundColor: 'skyblue', padding: 12 },
+  section: { marginTop: 32 }
 })
