@@ -5,7 +5,7 @@ const g = global as any
 
 const Md5Module = NativeModules.QuickMd5
 
-if (typeof Md5Module === 'object' && typeof Md5Module.install === 'function') {
+if (Md5Module && typeof Md5Module.install === 'function') {
   Md5Module.install()
 }
 
