@@ -23,7 +23,9 @@ RCT_EXPORT_MODULE()
     return;
   }
 
-  installMd5(*(facebook::jsi::Runtime *)cxxBridge.runtime);
+  [bridge dispatchBlock:^{
+    installMd5(*(facebook::jsi::Runtime *)cxxBridge.runtime);
+  } queue:RCTJSThread];
 }
 
 - (void)invalidate {
