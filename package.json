@@ -1,6 +1,6 @@
 {
   "name": "react-native-quick-md5",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "A fast C++ implementation with JSI binding of MD5 for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
