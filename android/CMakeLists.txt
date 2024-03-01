@@ -1,3 +1,4 @@
+project(QuickMd5)
 cmake_minimum_required(VERSION 3.9.0)
 
 set (PACKAGE_NAME "react-native-quick-md5")
