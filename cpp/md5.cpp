@@ -347,6 +347,23 @@ std::string MD5::hexdigest() const
  
   return std::string(buf);
 }
+
+void MD5::hexdigest(char dest[33]) const {
+  if (!finalized) {
+    dest[0] = '\0';
+    return;
+  }
+
+  static constexpr char kHex[] = "0123456789abcdef";
+
+  char* p = dest;
+  for (int i = 0; i < 16; ++i) {
+    const uint8_t v = static_cast<uint8_t>(digest[i]);
+    *p++ = kHex[v >> 4];
+    *p++ = kHex[v & 0x0F];
+  }
+  *p = '\0'; // dest[32]
+}
  
 //////////////////////////////
  
@@ -370,3 +387,11 @@ std::string md5(char * Input, long length)
  
     return md5.hexdigest();
 }
+
+void md5(char* Input, long length, char dest[33])
+{
+    MD5 md5 = MD5(Input,length);
+ 
+    md5.hexdigest(dest);
+}
+

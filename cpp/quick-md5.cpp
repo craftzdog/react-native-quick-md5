@@ -37,9 +37,11 @@ void installMd5(jsi::Runtime& jsiRuntime) {
         if(!md5_valueToString(runtime, arguments[0], &str)) {
           return jsi::Value(-1);
         }
-        std::string strMd5 =  md5(str);
 
-        return jsi::Value(jsi::String::createFromUtf8(runtime, strMd5));
+        char dest[33];
+        md5(str.data(),str.size(), dest);
+
+        return jsi::String::createFromAscii(runtime, dest, 32);
       }
   );
   jsiRuntime.global().setProperty(jsiRuntime, "md5FromArrayBuffer", std::move(md5FromArrayBuffer));
